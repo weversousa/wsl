@@ -80,6 +80,8 @@ Dicas rápidas:
 Todas essas dicas e como fazê-las estão no link tutorial...
 
 Dicas extras tutorial:
-* Configure a chave SSH para o GitHub
+* GitHub com SSH: 
+  * [Etapa 1](https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+  * [Etapa 2](https://docs.github.com/pt/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 * Instale o [GitHub CLI](https://cli.github.com/)
 * Instale o Poetry (eu que uso o Python é uma maravilha)
