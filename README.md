@@ -75,11 +75,11 @@ Dicas rápidas:
 * Configure o `GIT`
 * Instale o `Docker`
 * Instale um `navegador` (eu que uso o selenium é importante)
-  * [](./shell/)
 * Configure o `VS Code`
 
 Todas essas dicas e como fazê-las estão no link tutorial...
 
 Dicas extras tutorial:
 * Configure a chave SSH para o GitHub
+* Instale o [GitHub CLI](https://cli.github.com/)
 * Instale o Poetry (eu que uso o Python é uma maravilha)
