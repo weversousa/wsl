@@ -1,39 +1,55 @@
 # WSL (Windows Subsystem for Linux)
 
-## Importante!
+## Como instalar o WSL
 
-Ir em `Recursos do Windows - Ativar ou desativar recursos do Windows`.
-E selecionar "caso não esteja":
-- Subsistema Windows para Linux
-- Plataforma de Máquina Virtual
+[Windows 10](https://learn.microsoft.com/pt-br/windows/wsl/install-manual)
 
-No Windows 11 normalmente já vem tudo definido.
-Mas caso você desconfigure acidentalemnte "o que eu já fiz hahahaha" pode ser que tenha problemas ao tentar instalar uma Distribuição.
+É necessário checar se 2 recursos do Windows estão habilitados.:
+* `Subsistema do Windows para Linux`
+* `Habilitar o recurso de Máquina Virtual`
+ 
+ Checar (PowerShell como administrador):
 
-Um erro que já aconteceu comigo `Error code: Wsl/WSL_E_DEFAULT_DISTRO_NOT_FOUND` justamente por não estarem selecionados.
+```powershell
+dism.exe /online /get-featureinfo /featurename:Microsoft-Windows-Subsystem-Linux
+dism.exe /online /get-featureinfo /featurename:VirtualMachinePlatform
+```
 
+Habilitar (PowerShell como administrador):
 
-```shell
-# No Windows 11 o WSL 2 já vem instalado, e para verifcar a versão:
+```powershell
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+
+## CLI
+
+Após passo-a-passo acima ou no [Windows 11](https://learn.microsoft.com/pt-br/windows/wsl/install).
+
+### Sempre use a flag `--version` para saber se um programa está instalado
+
+```powershell
 wsl --version
 ```
 
-```shell
-# Use a flag help para conhecer todos os comandos disponíveis.
+### Sempre use a flag `--help` para conhecer os comandos disponíveis de um programa
+
+```powershell
 wsl --help
 ```
 
-```shell
-# Retorna uma lista com todas as distribuições que podem ser instaladas via CLI.
-wsl wsl --list --online
+### Listar Distribuições disponíveis para instalação
+
+```powershell
+wsl --list --online
 ```
 
-```shell
-# Instalando a versão 22.04 do Ubuntu.
+### Como instalar uma Distribuição
+
+```powershell
 wsl --install Ubuntu-22.04
 ```
 
-```shell
-# Reiniciar o sistema operacional para que as alterações tenham efeito.
-shutdown -r
-```
+## Configurar o ambiente de desenvolvimento Linux
+
+Para quem não tem tanto conhecimento com Linux, vale a pena dar uma olhada no [tutorial da Microsoft](https://learn.microsoft.com/pt-br/windows/wsl/setup/environment#set-up-your-linux-username-and-password).
